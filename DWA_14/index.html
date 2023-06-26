@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tally App</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.4.0/dist/shoelace-autoloader.js"></script>
+    <script defer type="module" src="tally-app.js"></script>
+<body>
+    <tally-header></tally-header>
+    <div class="counter">Count: <span id="countValue"></span></div>
+    <div class="message"></div>
+    <sl-button class="button" @click=${add}>add</sl-button>
+    <sl-button class="button" @click=${minus}>Substract</sl-button>
+    <sl-button class="button" @click=${restart}>Restart</sl-button>
+  <counter-app></counter-app>
+</body>
+</html>
