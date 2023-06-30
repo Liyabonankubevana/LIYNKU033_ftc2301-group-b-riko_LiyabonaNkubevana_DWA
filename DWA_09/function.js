@@ -39,7 +39,7 @@ const matches = books;
 
 /* ------------------- Book Preview  -------------------- */
 
-const createPreviewElement = (book) => {
+export const createPreviewElement = (book) => {
     const { author: authorId, id, image, title } = book;
   
     // create a new button element

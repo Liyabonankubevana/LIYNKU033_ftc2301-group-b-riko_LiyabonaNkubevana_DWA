@@ -1,0 +1,43 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  /* Container styles */
+  div[data-type="Counter"] {
+    margin-bottom: 20px;
+  }
+  
+  /* Input styles */
+  .Counter-value {
+    width: 100px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  /* Button styles */
+  sl-button {
+    margin-right: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .Counter-value {
+      width: 80px;
+      font-size: 14px;
+    }
+  }
+  

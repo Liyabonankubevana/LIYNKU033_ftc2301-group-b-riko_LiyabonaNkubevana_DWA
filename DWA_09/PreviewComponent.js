@@ -6,7 +6,7 @@ class PreviewsHtml extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = `<main class="list">
+        this.innerHTML = `<main class="list" open>
         <div class="list__items" data-list-items></div>
         <div class="list__message" data-list-message>No results found. Your filters might be too narrow.</div>
         <button class="list__button" data-list-button></button>
@@ -28,4 +28,4 @@ class PreviewsHtml extends HTMLElement {
       }
 }
 
-customElements.define('header-component', PreviewsHtml);
+customElements.define('header7-component', PreviewsHtml);

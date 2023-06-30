@@ -1,0 +1,89 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Header */
+.Nav-bar {
+  background-color:  #f7f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Image {
+  height: 60px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  margin-left: 10px;
+}
+
+.nav-items li a {
+  color: #050505;
+  text-decoration: none;
+}
+.nav-items li a {
+  text-decoration: none;
+  padding: 25px 25px;
+  text-transform: uppercase;
+  font-weight:lighter;
+  text-align: center;
+}
+.nav-items li a:hover {
+  background-color: rgb(202, 199, 199);
+  color: azure;
+} 
+
+/* Main Content */
+
+.Main {
+  background-color: #f4f4f4;
+  padding: 20px;
+  background-image: url("./react-icon-large.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 75%;
+}
+
+.Main--title {
+  font-size: 24px;
+  color: #333;
+}
+
+.Main--list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.Main--list li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}

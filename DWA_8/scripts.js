@@ -1,7 +1,7 @@
 // Fully working scripts.js file
 
 import { books, authors, genres, BOOKS_PER_PAGE } from './Modules/data.js'
-import { BookPreview, previewHTML, htmlElement } from './Modules/function.js';
+import  BookPreview, previewHTML, htmlElement  from './Modules/function.js';
 
 let page = 1;
 let matches = books

@@ -1,0 +1,45 @@
+.nav-items {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.nav-items > li {
+    padding: 10px;
+}
+
+.nav ul li::after {
+    content: '';
+    transform: translateX(-50);
+    background: #007393;
+    transition: width 0.3s;
+}
+
+nav ul li:hover::after {
+    width: 50%;
+}
+
+.Image {
+    width: 60px;
+}
+
+/* Main Content */
+
+
+
+/* Footer */
+
+.footer {
+    align-items: end;
+    background-color: rgb(44, 43, 43);
+}
+
+.footer p {
+    text-align: center;
+    color: aliceblue;
+}

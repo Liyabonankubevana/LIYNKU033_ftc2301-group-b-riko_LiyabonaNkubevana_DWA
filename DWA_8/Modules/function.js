@@ -27,8 +27,8 @@ export const htmlElement = {
     dataSettingsCancel : document.querySelector('[data-settings-cancel]'),
     saveElement : document.querySelector('[data-settings-save]'),
     dataSettingsTheme : document.querySelector('[data-settings-theme]')
-    }
-
+}    
+    // @ts-check
 export const previewHTML = () => {
     const fragment = document.createDocumentFragment()
 
