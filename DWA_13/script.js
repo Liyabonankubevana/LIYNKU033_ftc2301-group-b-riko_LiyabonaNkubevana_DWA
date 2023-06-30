@@ -80,3 +80,26 @@ const concatenatedNames = products.reduce((str, product) => {
   return str + product.product;
 }, '');
 console.log(concatenatedNames);
+
+// 13. Use reduce to calculate both the highest and lowest-priced items.
+const { highest, lowest } = products.reduce(
+  (result, product) => {
+    if (product.price > result.highest.price) {
+      result.highest = product;
+    }
+    if (product.price < result.lowest.price) {
+      result.lowest = product;
+    }
+    return result;
+  },
+  { highest: { price: -Infinity }, lowest: { price: Infinity } }
+);
+console.log(`Highest: ${highest.product}. Lowest: ${lowest.product}`);
+
+// 14. Using only Object.entries and reduce, recreate the object with modified keys.
+const modifiedObject = Object.entries(products).reduce((obj, [key, value]) => {
+  const modifiedKey = key === 'product' ? 'name' : key === 'price' ? 'cost' : key;
+  obj[modifiedKey] = value;
+  return obj;
+}, {});
+console.log(modifiedObject);
