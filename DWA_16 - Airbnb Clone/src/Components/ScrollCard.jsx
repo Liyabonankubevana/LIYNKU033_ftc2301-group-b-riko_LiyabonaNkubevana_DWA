@@ -16,20 +16,28 @@ import React from "react"
  */
 
  export const ScrollCards = (props) => {
+  let badgeText
+  if (props.item.openSpots === 0) {
+      badgeText = "SOLD OUT"
+  } else if (props.item.location === "Online") {
+      badgeText = "ONLINE"
+  }
+  
     return (
       <>
       <div className='Card'>
-          <img src={props.img} className='card--image'/>
+      {badgeText && <div className="card--badge">{badgeText}</div>}
+          <img src={props.item.coverImg} className='card--image'/>
           <div className='card--stats'>
               <img  src='./src/assets/star.png' className='card--star'/>
-              <span className="card--rating">{props.rating}</span>
-              <span className='Gray'>({props.reviewCount}) *</span>
+              <span className="card--rating">{props.item.stats.rating}</span>
+              <span className='Gray'>({props.item.stats.reviewCount}) *</span>
           </div>
           <>
-              <span className='card--location'> {props.location}</span>
-              </>
-          <p className="card--title">{props.title}</p>
-          <p className="card--price"><span className='Bold'>From ${props.price}</span> / person</p>
+              <span className='card--location'> {props.item.location}</span>
+          </>
+          <p className="card--title">{props.item.title}</p>
+          <p className="card--price"><span className='Bold'>From ${props.item.price}</span> / person</p>
       </div>
       </>
     )

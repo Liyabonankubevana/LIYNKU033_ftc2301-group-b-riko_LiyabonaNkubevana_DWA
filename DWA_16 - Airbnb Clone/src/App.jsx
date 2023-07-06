@@ -19,12 +19,8 @@ export default function App() {
     return airbnbData.map(item => (
       <ScrollCards
         key={item.id}
-        img={item.coverImg}
-        rating={item.stats.rating}
-        reviewCount={item.stats.reviewCount}
-        location={item.location}
-        title={item.title}
-        price={item.price}
+        item={item}
+        // {..item} - you can use the spread syntax and it will have the same concept of parsing the data property identification. I.e title={item.title}, description={item.description} etc.
       />
     ));
   };
