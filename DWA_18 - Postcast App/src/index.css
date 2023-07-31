@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image-appear {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-appear.appeared {
+  opacity: 1;
+}
+
