@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { supabase } from '../Components/Supabase';
-import HomePage from './Home';
+import { Link, useNavigate} from 'react-router-dom';
 
-export default function SignIn() {
+export default function SignIn(setToken) {
 /**
  * The above function is a React hook that updates the formData state object with the values entered in
  * the input fields.
@@ -11,6 +11,7 @@ export default function SignIn() {
 const [formData, setFormData] = useState({
     email:'', password:''
 })
+const navigate = useNavigate();
 
 function handleChange(event){
     setFormData((prevFormData)=>{
@@ -26,24 +27,28 @@ function handleChange(event){
  * application, attempting to sign in a user using Supabase authentication and displaying an error
  * message if the sign-in fails.
  */
-async function handleSubmit(event){
-    event.preventdefault()
-   try { const { data, error } = await supabase.auth.signIn({
-    email: formData.email,
-    password: formData.password,
-    options: {
-        data: {
-            email: formData.email
-            }
-        }
-        }
-    )
-    if(error) throw error
-    alert('Incorrect Email or Password. Try again!') 
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  try {
+    const { user, error } = await supabase.auth.signIn({
+      email: formData.email,
+      password: formData.password
+    });
+    
+    if (error) {
+      alert('Incorrect Email or Password. Try again!');
+    } else {
+      // Assuming you want to set a token here, modify it accordingly
+      if (user) {
+        setToken(user.id);
+      }
+      
+      navigate('/');
     }
-    catch(error) {
-        alert(error.message)
-    }
+  } catch (error) {
+    alert(error.message);
+  }
 }
 
   return (
@@ -92,6 +97,7 @@ async function handleSubmit(event){
             </button>
           </div>
         </form>
+        <div className='register-link'>No account? <Link to='/signUp'>Sign Up</Link></div>
       </div>
     </div>
   );
